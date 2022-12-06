@@ -11,7 +11,6 @@ public class CreditCard
         this.personalPIN = personalPIN;
         balanceOwed = 0;
     }
-
     public String getAccountHolder()
     {
         return accountHolder;
