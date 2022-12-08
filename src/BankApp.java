@@ -46,9 +46,10 @@ public class BankApp {
         return "Made payment of " + num;
     }
 
-    public String OpenCredit(String name, String PIN)
+    public String OpenCredit(String name, String PIN, CreditCard card2)
     {
-        CreditCard card2 = new CreditCard(name,PIN);
+        card2.setAccountHolder(name);
+        card2.setPersonalPIN(PIN);
         return "Made card2";
     }
 

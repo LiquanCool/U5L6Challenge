@@ -11,8 +11,7 @@ public class Runner {
         System.out.println("What do you want your PIN to be?");
         PIN = scan.nextLine();
         CreditCard card1 = new CreditCard(name,PIN);
-        CreditCard card3 = null;
-        CreditCard card2 = card3;
+        CreditCard card2 = new CreditCard(name,PIN);
         BagelShop shop1 = new BagelShop("shop1", 1000, 2, BagelBank);
         BankApp app = new BankApp();
         System.out.println(BankApp.menu());
@@ -26,6 +25,7 @@ public class Runner {
                 {
                     System.out.println("How many would you like to buy?");
                     num = scan.nextInt();
+                    scan.nextLine();
                     System.out.println("What is your PIN?");
                     PIN = scan.nextLine();
                     System.out.println(app.purchase(num, card1, PIN, shop1));
@@ -34,6 +34,7 @@ public class Runner {
                 {
                     System.out.println("How many would you like to return?");
                     num = scan.nextInt();
+                    scan.nextLine();
                     System.out.println("What is your PIN?");
                     PIN = scan.nextLine();
                     System.out.println(app.returnBagels(num, card1, PIN, shop1));
@@ -42,6 +43,7 @@ public class Runner {
                 {
                     System.out.println("How much would you like to pay?");
                     num = scan.nextInt();
+                    scan.nextLine();
                     System.out.println("What is your PIN?");
                     PIN = scan.nextLine();
                     System.out.println(app.payment(num, card1, PIN, BagelBank));
@@ -50,9 +52,10 @@ public class Runner {
                 {
                     System.out.println("What is your name?");
                     name = scan.nextLine();
+                    scan.nextLine();
                     System.out.println("What do you want your new PIN to be?");
                     PIN = scan.nextLine();
-                    System.out.println(app.OpenCredit(name, PIN));
+                    System.out.println(app.OpenCredit(name, PIN, card2));
                 }
                 else if (choice.equals("c"))
                 {
@@ -77,6 +80,7 @@ public class Runner {
                 {
                     System.out.println("How many would you like to buy?");
                     num = scan.nextInt();
+                    scan.nextLine();
                     System.out.println("What is your PIN?");
                     PIN = scan.nextLine();
                     System.out.println(app.purchase(num, card2, PIN, shop1));
@@ -85,6 +89,7 @@ public class Runner {
                 {
                     System.out.println("How many would you like to return?");
                     num = scan.nextInt();
+                    scan.nextLine();
                     System.out.println("What is your PIN?");
                     PIN = scan.nextLine();
                     System.out.println(app.returnBagels(num, card2, PIN, shop1));
@@ -93,6 +98,7 @@ public class Runner {
                 {
                     System.out.println("How much would you like to pay?");
                     num = scan.nextInt();
+                    scan.nextLine();
                     System.out.println("What is your PIN?");
                     PIN = scan.nextLine();
                     System.out.println(app.payment(num, card2, PIN, BagelBank));
@@ -103,7 +109,7 @@ public class Runner {
                     name = scan.nextLine();
                     System.out.println("What do you want your new PIN to be?");
                     PIN = scan.nextLine();
-                    System.out.println(app.OpenCredit(name, PIN));
+                    System.out.println(app.OpenCredit(name, PIN, card2));
                 }
                 else if (choice.equals("c"))
                 {
@@ -119,6 +125,7 @@ public class Runner {
                 }
                 System.out.println(BankApp.menu());
                 choice = scan.nextLine();
+                scan.nextLine();
                 System.out.println("Which card do you want to use?");
                 card = scan.nextInt();
             }

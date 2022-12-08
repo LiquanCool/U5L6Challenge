@@ -5,6 +5,14 @@ public class CreditCard
     private String personalPIN;
     private int balanceOwed;
 
+    public void setAccountHolder(String accountHolder) {
+        this.accountHolder = accountHolder;
+    }
+
+    public void setPersonalPIN(String personalPIN) {
+        this.personalPIN = personalPIN;
+    }
+
     public CreditCard(String name, String personalPIN)
     {
         accountHolder = name;
